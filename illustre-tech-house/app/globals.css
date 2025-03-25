@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+/* ─── Brand colour tokens ──────────────────────────────────────────────────── */
+@theme {
+  --color-brand:        #03a9f4;
+  --color-brand-dark:   #0288d1;
+  --color-brand-light:  #b3e5fc;
+  --color-brand-hover:  #039be5;
+  --color-kigali:       #00C896;
+
+  /* Dark-mode surface palette */
+  --color-obsidian:     #0D1117;
+  --color-slate-dark:   #1E2432;
+  --color-slate-border: #2A2F3F;
+  --color-ivory:        #F4F4F5;
+  --color-ash:          #8B8FA8;
+
+  /* Light-mode surface palette */
+  --color-surface:      #FFFFFF;
+  --color-surface-alt:  #F0F4F8;
+  --color-surface-card: #FFFFFF;
+  --color-border-light: #E2E8F0;
+  --color-text-dark:    #0D1117;
+  --color-text-muted:   #64748B;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Animation shorthands */
+  --animate-fade-in-up:    fadeInUp 0.65s cubic-bezier(0.16,1,0.3,1) both;
+  --animate-fade-in:       fadeIn 0.5s ease-out both;
+  --animate-slide-in-left: slideInLeft 0.65s cubic-bezier(0.16,1,0.3,1) both;
+  --animate-scale-in:      scaleIn 0.5s cubic-bezier(0.16,1,0.3,1) both;
+  --animate-pulse-glow:    pulseGlow 3s ease-in-out infinite;
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(3,169,244,0); }
+  50%       { box-shadow: 0 0 32px 6px rgba(3,169,244,0.25); }
+}
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+@keyframes floatY {
+  0%,100% { transform: translateY(0px);   }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes countUp {
+  from { opacity:0; transform:translateY(12px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ─── CSS custom properties (light/dark) ───────────────────────────────────── */
+:root {
+  /* default = dark */
+  --bg-page:       #0D1117;
+  --bg-section-alt:#13181f;
+  --bg-card:       #1E2432;
+  --border:        #2A2F3F;
+  --text-primary:  #F4F4F5;
+  --text-muted:    #8B8FA8;
+  --scrollbar-bg:  #0D1117;
+  --scrollbar-th:  #2A2F3F;
+  --geo-opacity:   0.06;
+}
+
+:root[data-theme="light"] {
+  --bg-page:       #F0F4F8;
+  --bg-section-alt:#FFFFFF;
+  --bg-card:       #FFFFFF;
+  --border:        #CBD5E1;
+  --text-primary:  #0D1117;
+  --text-muted:    #64748B;
+  --scrollbar-bg:  #F0F4F8;
+  --scrollbar-th:  #CBD5E1;
+  --geo-opacity:   0.08;
+}
+
+/* ─── Base reset ────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar           { width: 5px; }
+::-webkit-scrollbar-track     { background: var(--scrollbar-bg); }
+::-webkit-scrollbar-thumb     { background: var(--scrollbar-th); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #03a9f4; }
+
+/* ─── Selection ─────────────────────────────────────────────────────────────── */
+::selection {
+  background-color: rgba(3, 169, 244, 0.25);
+  color: inherit;
+}
+
+/* ─── Utility classes ───────────────────────────────────────────────────────── */
+
+/* Geometric grid hero background */
+.geo-grid {
+  background-image:
+    linear-gradient(rgba(3,169,244,var(--geo-opacity)) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(3,169,244,var(--geo-opacity)) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Brand gradient text */
+.text-gradient {
+  background: linear-gradient(125deg, #03a9f4 0%, #0288d1 50%, #b3e5fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer loading stripe */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(3,169,244,0.15) 50%,
+    transparent 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 2.4s linear infinite;
+}
+
+/* Theme-aware card */
+.card-theme {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Theme-aware page background */
+.bg-page       { background-color: var(--bg-page); }
+.bg-section-alt { background-color: var(--bg-section-alt); }
+.text-primary  { color: var(--text-primary); }
+.text-muted-th { color: var(--text-muted); }
+.border-theme  { border-color: var(--border); }
+
+/* Scroll-reveal base state (JS toggles .revealed) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1),
+              transform 0.65s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1),
+              transform 0.65s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1),
+              transform 0.55s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delay helpers */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Float animation for decorative elements */
+.float-y {
+  animation: floatY 5s ease-in-out infinite;
+}
+
+/* Glow pulse on hover for CTA buttons */
+.glow-brand:hover {
+  animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+/* ─── Reusable hover-lift card helper (no JS needed) ───────────────────────── */
+.hover-card {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.hover-card:hover {
+  border-color: rgba(3, 169, 244, 0.3) !important;
+  box-shadow: 0 12px 40px rgba(3, 169, 244, 0.09);
+  transform: translateY(-3px);
+}
+.hover-card-sm:hover {
+  border-color: rgba(3, 169, 244, 0.3) !important;
+  box-shadow: 0 6px 24px rgba(3, 169, 244, 0.07);
+  transform: translateY(-2px);
+}
+
+/* ─── Light-theme overrides for elements using raw Tailwind tokens ──────────── */
+:root[data-theme="light"] .geo-grid {
+  background-image:
+    linear-gradient(rgba(3,169,244,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(3,169,244,0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
