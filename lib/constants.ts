@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { label: "Services", href: "/services" },
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -21,6 +22,7 @@ export const SERVICES = [
     stack: ["Node.js", "Python", "React", "PostgreSQL", "TypeScript"],
     idealFor: "SMEs building their first digital product, NGOs needing custom platforms",
     color: "brand",
+    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "ai-data",
@@ -37,6 +39,7 @@ export const SERVICES = [
     stack: ["Python", "TensorFlow", "LangChain", "OpenAI API", "Pandas"],
     idealFor: "Organisations with data they can't fully use",
     color: "kigali",
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "digital-transformation",
@@ -53,6 +56,7 @@ export const SERVICES = [
     stack: ["Paperless-NGX", "ERPNext", "OpenMRS", "Mojaloop", "UNICEF DPI"],
     idealFor: "NGOs and government offices moving from paper to digital",
     color: "brand",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "infrastructure",
@@ -69,6 +73,7 @@ export const SERVICES = [
     stack: ["AWS", "GCP", "DigitalOcean", "Docker", "GitHub Actions"],
     idealFor: "Teams that need reliable, secure, and scalable hosting",
     color: "kigali",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "data-analytics",
@@ -85,6 +90,7 @@ export const SERVICES = [
     stack: ["Metabase", "Power BI", "Python", "dbt", "PostgreSQL"],
     idealFor: "NGOs with reporting obligations to international donors",
     color: "brand",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "training",
@@ -101,6 +107,7 @@ export const SERVICES = [
     stack: [],
     idealFor: "Organisations building internal digital capability",
     color: "kigali",
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
@@ -116,6 +123,7 @@ export const CASE_STUDIES = [
     result: "40% reduction in monthly reporting time",
     stack: ["Metabase", "PostgreSQL", "Python", "dbt"],
     featured: true,
+    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: "document-management",
@@ -128,6 +136,7 @@ export const CASE_STUDIES = [
     result: "98% of documents digitised within 90 days",
     stack: ["Paperless-NGX", "Docker", "LDAP", "Nginx"],
     featured: true,
+    thumbnail: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: "ai-reporting-assistant",
@@ -140,6 +149,7 @@ export const CASE_STUDIES = [
     result: "82% reduction in manual report processing time",
     stack: ["Python", "LangChain", "OpenAI API", "FastAPI", "React"],
     featured: true,
+    thumbnail: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: "sme-erp",
@@ -152,7 +162,42 @@ export const CASE_STUDIES = [
     result: "Single source of truth across all business functions",
     stack: ["ERPNext", "Python", "Frappe", "PostgreSQL"],
     featured: false,
+    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
   },
+];
+
+export const TESTIMONIALS = [
+  {
+    quote:
+      "Illustre didn't just build us a dashboard — they understood what we were actually trying to measure and why. The system they delivered has fundamentally changed how we report to our donors.",
+    author: "Amara Diallo",
+    role: "Programme Director",
+    company: "Regional Health Initiative",
+    avatar: "AD",
+  },
+  {
+    quote:
+      "We went from managing 10,000 documents across three shared drives to a fully searchable, permission-controlled archive in under three months. The training was exceptionally well-done.",
+    author: "Jean-Pierre Habimana",
+    role: "Head of Operations",
+    company: "National Programme Office",
+    avatar: "JH",
+  },
+  {
+    quote:
+      "The AI pipeline they built for our reporting process saved my team dozens of hours every month. More importantly, the quality of our donor narratives has improved significantly.",
+    author: "Fatima Al-Hassan",
+    role: "M&E Manager",
+    company: "International Development Fund",
+    avatar: "FA",
+  },
+];
+
+export const STATS = [
+  { value: 40, suffix: "+", label: "Projects Delivered" },
+  { value: 12, suffix: "+", label: "Organisations Served" },
+  { value: 82, suffix: "%", label: "Avg. Efficiency Gain" },
+  { value: 3, suffix: " yrs", label: "Operating in Kigali" },
 ];
 
 export const SKILLS_BADGES = [

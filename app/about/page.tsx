@@ -3,7 +3,7 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
 import HoverCard from "@/components/ui/HoverCard";
 import CTABand from "@/components/sections/CTABand";
-import ScrollReveal from "@/components/ui/ScrollReveal";
+import MotionReveal from "@/components/ui/MotionReveal";
 import { SKILLS_BADGES, TECH_STACK_LOGOS } from "@/lib/constants";
 import { Target, Heart, Gem, Wrench } from "lucide-react";
 
@@ -25,11 +25,11 @@ export default function AboutPage() {
     <>
       {/* Header */}
       <section
-        className="pt-32 pb-20"
+        className="pt-28 sm:pt-32 pb-14 sm:pb-20"
         style={{ backgroundColor: "var(--bg-page)", borderBottom: "1px solid var(--border)" }}
       >
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <ScrollReveal>
+        <div className="wrap" style={{ maxWidth: "48rem" }}>
+          <MotionReveal>
             <SectionLabel className="mb-4">About the Firm</SectionLabel>
             <h1
               className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-8"
@@ -43,15 +43,15 @@ export default function AboutPage() {
               Illustre Tech House was founded with one conviction: African institutions deserve
               software built to the same standard as anywhere else in the world.
             </p>
-          </ScrollReveal>
+          </MotionReveal>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-20 bg-page">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="section-py" style={{ backgroundColor: "var(--bg-page)" }}>
+        <div className="wrap">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <ScrollReveal direction="left">
+            <MotionReveal direction="left">
               <SectionLabel className="mb-4">Our Mission</SectionLabel>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
                 Precision engineering for the African future.
@@ -65,7 +65,7 @@ export default function AboutPage() {
                 infrastructure — bringing the best of global technology practice to problems that
                 matter locally.
               </p>
-            </ScrollReveal>
+            </MotionReveal>
 
             {/* Stat cards */}
             <div className="grid grid-cols-2 gap-4">
@@ -75,14 +75,14 @@ export default function AboutPage() {
                 { value: "100%", label: "Senior delivery" },
                 { value: "EAC",  label: "Regional focus" },
               ].map((stat, i) => (
-                <ScrollReveal key={stat.label} delay={(i * 100) as 0 | 100 | 200 | 300} direction="scale">
-                  <HoverCard className="p-6 text-center">
+                <MotionReveal key={stat.label} direction="scale" delay={i * 0.1}>
+                  <HoverCard className="card-body text-center">
                     <p className="text-4xl font-bold text-brand mb-1">{stat.value}</p>
                     <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>
                       {stat.label}
                     </p>
                   </HoverCard>
-                </ScrollReveal>
+                </MotionReveal>
               ))}
             </div>
           </div>
@@ -91,21 +91,21 @@ export default function AboutPage() {
 
       {/* Values */}
       <section
-        className="py-20"
+        className="section-py"
         style={{ backgroundColor: "var(--bg-section-alt)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ScrollReveal>
+        <div className="wrap">
+          <MotionReveal>
             <SectionLabel className="mb-4">Core Values</SectionLabel>
             <h2 className="text-3xl sm:text-4xl font-bold mb-12" style={{ color: "var(--text-primary)" }}>
               What we stand for.
             </h2>
-          </ScrollReveal>
+          </MotionReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {VALUES.map((v, i) => (
-              <ScrollReveal key={v.name} delay={(i * 100) as 0 | 100 | 200 | 300}>
-                <HoverCard className="p-6 h-full">
+              <MotionReveal key={v.name} direction="up" delay={i * 0.1}>
+                <HoverCard className="card-body h-full">
                   <div
                     className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
                     style={{ backgroundColor: "rgba(3,169,244,0.1)" }}
@@ -115,22 +115,22 @@ export default function AboutPage() {
                   <h3 className="font-bold mb-2" style={{ color: "var(--text-primary)" }}>{v.name}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{v.desc}</p>
                 </HoverCard>
-              </ScrollReveal>
+              </MotionReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Founder */}
-      <section className="py-20 bg-page">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ScrollReveal>
+      <section className="section-py" style={{ backgroundColor: "var(--bg-page)" }}>
+        <div className="wrap">
+          <MotionReveal>
             <SectionLabel className="mb-4">The Founder</SectionLabel>
-          </ScrollReveal>
+          </MotionReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mt-4">
             {/* Bio */}
-            <ScrollReveal direction="left">
+            <MotionReveal direction="left">
               <div className="flex items-center gap-5 mb-8">
                 <div
                   className="w-20 h-20 rounded-full flex items-center justify-center shrink-0"
@@ -176,10 +176,10 @@ export default function AboutPage() {
                   </span>
                 ))}
               </div>
-            </ScrollReveal>
+            </MotionReveal>
 
             {/* Tech stack */}
-            <ScrollReveal>
+            <MotionReveal>
               <h3 className="font-bold text-lg mb-6" style={{ color: "var(--text-primary)" }}>
                 Technologies we work with
               </h3>
@@ -190,7 +190,7 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {TECH_STACK_LOGOS.map((tech) => (
-                  <HoverCard key={tech} size="sm" className="px-3 py-3 text-center">
+                  <HoverCard key={tech} size="sm" className="px-4 py-3.5 text-center">
                     <span className="text-sm font-mono font-medium" style={{ color: "var(--text-primary)" }}>
                       {tech}
                     </span>
@@ -215,7 +215,7 @@ export default function AboutPage() {
               <div className="mt-8">
                 <Button href="/contact" variant="primary">Work With Us</Button>
               </div>
-            </ScrollReveal>
+            </MotionReveal>
           </div>
         </div>
       </section>

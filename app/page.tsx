@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
+import TrustedBy from "@/components/sections/TrustedBy";
 import ServicesGrid from "@/components/sections/ServicesGrid";
+import StatsCounter from "@/components/sections/StatsCounter";
 import WhyUs from "@/components/sections/WhyUs";
 import WorkStrip from "@/components/sections/WorkStrip";
+import Testimonials from "@/components/sections/Testimonials";
+import BlogPreview from "@/components/sections/BlogPreview";
 import CTABand from "@/components/sections/CTABand";
 
 export const metadata: Metadata = {
@@ -15,9 +19,13 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <TrustedBy />
       <ServicesGrid />
+      <StatsCounter />
       <WhyUs />
       <WorkStrip />
+      <Testimonials />
+      <BlogPreview />
       <CTABand />
     </>
   );

@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ThemeProvider from "@/components/ui/ThemeProvider";
+import PageTransitionWrapper from "@/components/ui/PageTransitionWrapper";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://illustretech.rw"),
@@ -94,8 +96,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-page min-h-full flex flex-col transition-colors duration-300">
         <ThemeProvider>
+          <CustomCursor />
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            <PageTransitionWrapper>{children}</PageTransitionWrapper>
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

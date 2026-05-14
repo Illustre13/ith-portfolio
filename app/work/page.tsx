@@ -4,7 +4,7 @@ import { useState } from "react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import CaseStudyCard from "@/components/pages/CaseStudyCard";
 import CTABand from "@/components/sections/CTABand";
-import ScrollReveal from "@/components/ui/ScrollReveal";
+import MotionReveal from "@/components/ui/MotionReveal";
 import { CASE_STUDIES, SECTOR_FILTERS } from "@/lib/constants";
 
 export default function WorkPage() {
@@ -16,32 +16,31 @@ export default function WorkPage() {
     <>
       {/* Header */}
       <section
-        className="pt-32 pb-16"
+        className="pt-28 sm:pt-32 pb-14 sm:pb-20"
         style={{ backgroundColor: "var(--bg-page)", borderBottom: "1px solid var(--border)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ScrollReveal>
-            <SectionLabel className="mb-4">Portfolio</SectionLabel>
+        <div className="wrap">
+          <MotionReveal>
+            <SectionLabel className="mb-3">Portfolio</SectionLabel>
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 max-w-2xl"
+              className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5 max-w-2xl"
               style={{ color: "var(--text-primary)" }}
             >
               Our Work.
             </h1>
-            <p className="text-lg max-w-xl leading-relaxed" style={{ color: "var(--text-muted)" }}>
+            <p className="text-base sm:text-lg max-w-xl leading-relaxed" style={{ color: "var(--text-muted)" }}>
               A selection of systems, platforms, and solutions we&apos;ve built for organisations
               across Rwanda and East Africa.
             </p>
-          </ScrollReveal>
+          </MotionReveal>
         </div>
       </section>
 
       {/* Filter + Grid */}
-      <section className="py-16 bg-page">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
+      <section className="section-py" style={{ backgroundColor: "var(--bg-page)" }}>
+        <div className="wrap">
           {/* Filter tabs */}
-          <ScrollReveal>
+          <MotionReveal>
             <div className="flex flex-wrap gap-2 mb-12">
               {SECTOR_FILTERS.map((filter) => (
                 <button
@@ -49,16 +48,16 @@ export default function WorkPage() {
                   onClick={() => setActive(filter)}
                   className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
                   style={{
-                    backgroundColor: active === filter ? "#03a9f4"         : "transparent",
-                    color:           active === filter ? "#0D1117"          : "var(--text-muted)",
-                    border:          active === filter ? "1px solid #03a9f4" : "1px solid var(--border)",
+                    backgroundColor: active === filter ? "#03a9f4" : "transparent",
+                    color: active === filter ? "#0D1117" : "var(--text-muted)",
+                    border: active === filter ? "1px solid #03a9f4" : "1px solid var(--border)",
                   }}
                 >
                   {filter}
                 </button>
               ))}
             </div>
-          </ScrollReveal>
+          </MotionReveal>
 
           {/* Grid */}
           {filtered.length > 0 ? (
@@ -81,8 +80,8 @@ export default function WorkPage() {
       </section>
 
       {/* Disclaimer */}
-      <section className="py-8 bg-page" style={{ borderTop: "1px solid var(--border)" }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-8" style={{ backgroundColor: "var(--bg-page)", borderTop: "1px solid var(--border)" }}>
+        <div className="wrap">
           <p className="font-mono text-xs text-center" style={{ color: "var(--text-muted)" }}>
             Client details are anonymised or used with permission. Results are as reported by the client at project close.
           </p>

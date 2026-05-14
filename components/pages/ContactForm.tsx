@@ -70,28 +70,6 @@ export default function ContactForm() {
 
   return (
     <>
-      {/* CSS-only focus ring for all form fields inside this form */}
-      <style>{`
-        .ith-field {
-          width: 100%;
-          background-color: var(--bg-page);
-          border: 1px solid var(--border);
-          border-radius: 8px;
-          padding: 12px 16px;
-          color: var(--text-primary);
-          font-size: 14px;
-          outline: none;
-          transition: border-color 0.2s ease, box-shadow 0.2s ease;
-          font-family: inherit;
-        }
-        .ith-field::placeholder { color: var(--text-muted); opacity: 0.5; }
-        .ith-field:focus {
-          border-color: #03a9f4;
-          box-shadow: 0 0 0 3px rgba(3,169,244,0.12);
-        }
-        .ith-field option { background-color: var(--bg-card); color: var(--text-primary); }
-      `}</style>
-
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <Field label="Full Name" required error={errors.name?.message}>
