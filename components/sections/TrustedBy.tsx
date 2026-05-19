@@ -1,21 +1,34 @@
-/* Placeholder logos — swap each <svg> for a real <img src="/logos/client.svg" /> when available */
+import Image from "next/image";
 
-const CLIENTS = [
-  { name: "Ministry of ICT", slug: "moict" },
-  { name: "Rwanda Health Initiative", slug: "rhi" },
-  { name: "East Africa NGO Alliance", slug: "eana" },
-  { name: "Kigali Tech Hub", slug: "kth" },
-  { name: "Development Finance Corp", slug: "dfc" },
-  { name: "Pan-African Education Fund", slug: "paef" },
+/* Add a logo file to /public/logos/<slug>.{png,svg,jpg} then set logoFile here.
+   Leave logoFile undefined to keep the monogram placeholder. */
+const CLIENTS: { name: string; slug: string; logoFile?: string }[] = [
+  { name: "Save the Life Homecare", slug: "save_the_life", logoFile: "/logos/save_the_life.png" },
+  { name: "VeloT Africa",           slug: "velot", logoFile: "/logos/velot.jpg" },
+  { name: "Twenza Tech",            slug: "twenza", logoFile: "/logos/twenza_favicon.svg" },
+  { name: "Kigali Tech Hub",        slug: "kth"},
 ];
 
-/* Inline SVG placeholder — generic "shield + initials" monogram.
-   Replace the entire <LogoPlaceholder /> with <img> once real logos are provided. */
-function LogoPlaceholder({ name, slug }: { name: string; slug: string }) {
-  const initials = slug.slice(0, 3).toUpperCase();
+function ClientLogo({ name, logoFile }: { name: string; logoFile?: string }) {
+  if (logoFile) {
+    return (
+      <div className="logo-placeholder" aria-label={name} title={name}>
+        <div className="logo-img-wrap">
+          <Image
+            src={logoFile}
+            alt={name}
+            fill
+            className="object-contain"
+            sizes="120px"
+          />
+        </div>
+        <span className="logo-name">{name}</span>
+      </div>
+    );
+  }
+
   return (
     <div className="logo-placeholder" aria-label={name} title={name}>
-      {/* Outer ring */}
       <svg
         viewBox="0 0 64 64"
         fill="none"
@@ -23,17 +36,11 @@ function LogoPlaceholder({ name, slug }: { name: string; slug: string }) {
         className="logo-svg"
         aria-hidden
       >
-        {/* Background rect */}
         <rect x="1" y="1" width="62" height="62" rx="10" className="logo-bg" />
-        {/* Horizontal rule top */}
         <rect x="10" y="12" width="44" height="3" rx="1.5" className="logo-bar" />
-        {/* Horizontal rule bottom */}
         <rect x="10" y="49" width="44" height="3" rx="1.5" className="logo-bar" />
-        {/* Left vertical bar */}
         <rect x="10" y="12" width="3" height="40" rx="1.5" className="logo-bar" />
-        {/* Right vertical bar */}
         <rect x="51" y="12" width="3" height="40" rx="1.5" className="logo-bar" />
-        {/* Diamond accent */}
         <rect x="28" y="28" width="8" height="8" rx="2" className="logo-accent" transform="rotate(45 32 32)" />
       </svg>
       <span className="logo-name">{name}</span>
@@ -63,7 +70,7 @@ export default function TrustedBy() {
         <div className="marquee-track trusted-track">
           {ITEMS.map((client, i) => (
             <div key={`${client.slug}-${i}`} className="trusted-item">
-              <LogoPlaceholder name={client.name} slug={client.slug} />
+              <ClientLogo name={client.name} logoFile={client.logoFile} />
             </div>
           ))}
         </div>
