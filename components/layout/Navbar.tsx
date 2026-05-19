@@ -78,17 +78,19 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="relative px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 hover:text-brand"
+                    className="relative px-4 py-2.5 text-sm font-medium rounded-lg transition-colors duration-200 hover:text-brand group"
                     style={{
-                      color:           active ? "#03a9f4" : "var(--text-muted)",
-                      backgroundColor: active ? "rgba(3,169,244,0.08)" : "transparent",
+                      color: active ? "#03a9f4" : "var(--text-muted)",
                       letterSpacing: "0.01em",
                     }}
                   >
                     {link.label}
-                    {active && (
-                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-brand" />
-                    )}
+                    <span
+                      className="absolute bottom-1.5 left-4 right-4 h-px rounded-full bg-brand origin-left transition-transform duration-200 group-hover:transform-[scaleX(1)]"
+                      style={{
+                        transform: active ? "scaleX(1)" : "scaleX(0)",
+                      }}
+                    />
                   </Link>
                 );
               })}

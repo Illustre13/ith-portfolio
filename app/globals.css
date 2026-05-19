@@ -129,9 +129,9 @@
 @media (min-width: 768px) { .section-head { margin-bottom: 5rem; } }
 
 /* ─── Base reset ────────────────────────────────────────────────────────────── */
-*, *::before, *::after { 
-  box-sizing: border-box; 
-  margin: 0; 
+*, *::before, *::after {
+  box-sizing: border-box;
+  /* margin: 0; */
   /* padding: 0; */
 }
 
@@ -265,14 +265,14 @@ body {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .hover-card:hover {
-  border-color: rgba(3, 169, 244, 0.3) !important;
-  box-shadow: 0 12px 40px rgba(3, 169, 244, 0.09);
-  transform: translateY(-3px);
+  border-color: rgba(3, 169, 244, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
 }
 .hover-card-sm:hover {
-  border-color: rgba(3, 169, 244, 0.3) !important;
-  box-shadow: 0 6px 24px rgba(3, 169, 244, 0.07);
-  transform: translateY(-2px);
+  border-color: rgba(3, 169, 244, 0.2) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
 }
 
 /* ─── Light-theme overrides for elements using raw Tailwind tokens ──────────── */
@@ -374,6 +374,11 @@ body {
   transition: opacity 0.2s ease;
 }
 .logo-placeholder:hover { opacity: 1; }
+.logo-img-wrap {
+  position: relative;
+  width: 7rem;
+  height: 3rem;
+}
 .logo-svg {
   width: 3rem;
   height: 3rem;

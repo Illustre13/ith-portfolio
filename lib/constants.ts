@@ -194,10 +194,10 @@ export const TESTIMONIALS = [
 ];
 
 export const STATS = [
-  { value: 40, suffix: "+", label: "Projects Delivered" },
-  { value: 12, suffix: "+", label: "Organisations Served" },
+  { value: 8, suffix: "+", label: "Projects Delivered" },
+  { value: 4, suffix: "+", label: "Organisations Served" },
   { value: 82, suffix: "%", label: "Avg. Efficiency Gain" },
-  { value: 3, suffix: " yrs", label: "Operating in Kigali" },
+  { value: 2, suffix: " yrs", label: "Operating in Kigali" },
 ];
 
 export const SKILLS_BADGES = [
@@ -207,6 +207,33 @@ export const SKILLS_BADGES = [
   "Open Source",
   "Scalable Systems",
   "Full-Stack Engineering",
+];
+
+export const TEAM = [
+  {
+    initials: "BN",
+    name: "Bertin NDAHAYO SINGIZWA",
+    role: "Principal Engineer",
+    bio: "Masters in IT and Software Engineering, specialising in agentic AI systems, machine learning, and data infrastructure. Before founding Illustre Tech House, Bertin worked across open-source deployment, earth observation ML, and scalable data architecture including engagement with UNICEF DPI platform Bebbo and Mojaloop.",
+    linkedin: "https://www.linkedin.com/in/ndahayo-s-bertin/",
+    skills: ["Software Engineering", "ML / Earth Observation", "Data Analytics", "Business Analytics"],
+  },
+  {
+    initials: "AK",
+    name: "Guhirwa Christian",
+    role: "Full-Stack Developer",
+    bio: "Christian is a full-stack developer with a background in building web applications and data-driven solutions. With expertise in React, Node.js, and PostgreSQL, Christian has contributed to projects ranging from internal tools to client-facing platforms. He is passionate about leveraging technology to solve real-world problems and has a keen interest in the intersection of software development and data analytics.",
+    linkedin: "https://www.linkedin.com/in/christian-guhirwa1226/",
+    skills: ["React", "Node.js", "PostgreSQL", "Docker"],
+  },
+  {
+    initials: "KO",
+    name: "Kamali Olivier",
+    role: "Data & Business Ops",
+    bio: "Olivier brings in expertise in data analytics, business operations, and project management. With a background in leveraging data for strategic decision-making, Olivier ensures that our projects not only run smoothly but also deliver actionable insights that drive impact.",
+    linkedin: "https://linkedin.com/in/kamali-olivier",
+    skills: ["Python", "Metabase", "AWS", "Open Source"],
+  },
 ];
 
 export const TECH_STACK_LOGOS = [

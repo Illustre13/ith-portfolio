@@ -136,12 +136,12 @@ export default function Footer() {
             </p>
             <div className="space-y-3.5">
               <a
-                href="mailto:hello@illustretech.rw"
+                href="mailto:illustre.tech.house@gmail.com"
                 className="flex items-center gap-2.5 text-sm hover:text-brand transition-colors duration-200"
                 style={{ color: "var(--text-muted)" }}
               >
                 <Mail size={13} className="shrink-0" />
-                hello@illustretech.rw
+                illustre.tech.house@gmail.com
               </a>
               <div
                 className="flex items-center gap-2.5 text-sm"
@@ -155,7 +155,7 @@ export default function Footer() {
                 style={{ color: "var(--text-muted)" }}
               >
                 <Phone size={13} className="shrink-0" />
-                +250 78X XXX XXX
+                +250 786 949 188
               </div>
 
               <div

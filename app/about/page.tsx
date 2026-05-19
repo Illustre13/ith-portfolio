@@ -4,8 +4,8 @@ import Button from "@/components/ui/Button";
 import HoverCard from "@/components/ui/HoverCard";
 import CTABand from "@/components/sections/CTABand";
 import MotionReveal from "@/components/ui/MotionReveal";
-import { SKILLS_BADGES, TECH_STACK_LOGOS } from "@/lib/constants";
-import { Target, Heart, Gem, Wrench } from "lucide-react";
+import { TEAM, TECH_STACK_LOGOS } from "@/lib/constants";
+import { Target, Heart, Gem, Wrench, SquareArrowOutUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About",
@@ -54,10 +54,10 @@ export default function AboutPage() {
             <MotionReveal direction="left">
               <SectionLabel className="mb-4">Our Mission</SectionLabel>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
-                Precision engineering for the African future.
+                Precision digital systems for your organization.
               </h2>
               <p className="leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
-                To engineer digital systems that empower African organisations to operate with
+                To engineer digital systems that empower organisations to operate with
                 precision, scale with confidence, and serve their communities better.
               </p>
               <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
@@ -121,102 +121,120 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder */}
+      {/* Team */}
       <section className="section-py" style={{ backgroundColor: "var(--bg-page)" }}>
         <div className="wrap">
           <MotionReveal>
-            <SectionLabel className="mb-4">The Founder</SectionLabel>
+            <SectionLabel className="mb-4">The Team</SectionLabel>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+              People behind the work.
+            </h2>
+            <p className="text-base leading-relaxed mb-12 max-w-xl" style={{ color: "var(--text-muted)" }}>
+              A small, senior team — each member hands-on from kick-off to delivery.
+            </p>
           </MotionReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mt-4">
-            {/* Bio */}
-            <MotionReveal direction="left">
-              <div className="flex items-center gap-5 mb-8">
-                <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: "rgba(3,169,244,0.1)", border: "2px solid rgba(3,169,244,0.3)" }}
-                >
-                  <span className="text-brand font-bold text-2xl font-mono">BN</span>
-                </div>
-                <div>
-                  <h2 className="font-bold text-2xl" style={{ color: "var(--text-primary)" }}>
-                    Bertin Niyomufasha
-                  </h2>
-                  <p className="font-mono text-sm mt-0.5" style={{ color: "var(--text-muted)" }}>
-                    Founder &amp; Principal Engineer
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {TEAM.map((member, i) => (
+              <MotionReveal key={member.name} direction="up" delay={i * 0.1}>
+                <HoverCard className="card-body flex flex-col h-full">
+                  {/* Avatar + name */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div
+                      className="w-16 h-16 rounded-full flex items-center justify-center shrink-0 text-brand font-bold text-xl font-mono"
+                      style={{ backgroundColor: "rgba(3,169,244,0.1)", border: "2px solid rgba(3,169,244,0.25)" }}
+                    >
+                      {member.initials}
+                    </div>
+                    <div>
+                      <p className="font-bold text-base leading-snug" style={{ color: "var(--text-primary)" }}>
+                        {member.name}
+                      </p>
+                      <p className="font-mono text-xs mt-0.5 uppercase tracking-wide" style={{ color: "var(--text-muted)" }}>
+                        {member.role}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Bio */}
+                  <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "var(--text-muted)" }}>
+                    {member.bio}
                   </p>
-                </div>
-              </div>
 
-              <div className="space-y-4 leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
-                <p>
-                  Masters in IT and Software Engineering with a specialisation in agentic AI systems,
-                  machine learning, and data infrastructure. Based in Kigali, building technology for
-                  institutions that matter.
-                </p>
-                <p>
-                  Before founding Illustre Tech House, Bertin worked across open-source deployment,
-                  earth observation machine learning, and scalable data architecture — including
-                  engagement with UNICEF DPI and Mojaloop open-source financial infrastructure.
-                </p>
-                <p>
-                  His approach to engineering is simple: understand the problem deeply, build only
-                  what is necessary, and make sure what you build lasts.
-                </p>
-              </div>
+                  {/* Skill badges */}
+                  <div className="flex flex-wrap gap-1.5 mb-6">
+                    {member.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-widest font-medium text-brand"
+                        style={{ backgroundColor: "rgba(3,169,244,0.08)", border: "1px solid rgba(3,169,244,0.18)" }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
 
-              <div className="flex flex-wrap gap-2">
-                {SKILLS_BADGES.map((skill) => (
-                  <span
-                    key={skill}
-                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-mono uppercase tracking-widest font-medium text-brand"
-                    style={{ backgroundColor: "rgba(3,169,244,0.1)", border: "1px solid rgba(3,169,244,0.2)" }}
-                  >
-                    {skill}
+                  {/* LinkedIn */}
+                  <div style={{ borderTop: "1px solid var(--border)", paddingTop: "1.25rem" }}>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:text-brand"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      <SquareArrowOutUpRight size={14} /></a>
+                  </div>
+                </HoverCard>
+              </MotionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tech stack */}
+      <section
+        className="section-py"
+        style={{ backgroundColor: "var(--bg-section-alt)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}
+      >
+        <div className="wrap">
+          <MotionReveal>
+            <SectionLabel className="mb-4">Technologies</SectionLabel>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+              What we build with.
+            </h2>
+            <p className="text-base leading-relaxed mb-10 max-w-xl" style={{ color: "var(--text-muted)" }}>
+              Open-source and cloud-native tools — chosen for reliability, community support, and fit for the East African context.
+            </p>
+          </MotionReveal>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+            {TECH_STACK_LOGOS.map((tech, i) => (
+              <MotionReveal key={tech} direction="scale" delay={i * 0.05}>
+                <HoverCard size="sm" className="px-4 py-3.5 text-center">
+                  <span className="text-sm font-mono font-medium" style={{ color: "var(--text-primary)" }}>
+                    {tech}
                   </span>
-                ))}
-              </div>
-            </MotionReveal>
+                </HoverCard>
+              </MotionReveal>
+            ))}
+          </div>
 
-            {/* Tech stack */}
-            <MotionReveal>
-              <h3 className="font-bold text-lg mb-6" style={{ color: "var(--text-primary)" }}>
-                Technologies we work with
-              </h3>
-              <p className="text-sm mb-8 leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                We work with leading open-source and cloud technologies — chosen for reliability,
-                community support, and fit for the East African context.
-              </p>
-
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {TECH_STACK_LOGOS.map((tech) => (
-                  <HoverCard key={tech} size="sm" className="px-4 py-3.5 text-center">
-                    <span className="text-sm font-mono font-medium" style={{ color: "var(--text-primary)" }}>
-                      {tech}
-                    </span>
-                  </HoverCard>
-                ))}
-              </div>
-
+          <MotionReveal>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <div
-                className="mt-10 p-6 rounded-xl"
-                style={{ backgroundColor: "rgba(3,169,244,0.05)", border: "1px solid rgba(3,169,244,0.2)" }}
+                className="flex-1 p-6 rounded-xl"
+                style={{ backgroundColor: "rgba(3,169,244,0.05)", border: "1px solid rgba(3,169,244,0.18)" }}
               >
-                <p className="text-brand font-mono text-xs uppercase tracking-widest mb-2">
-                  Open Source First
-                </p>
+                <p className="text-brand font-mono text-xs uppercase tracking-widest mb-2">Open Source First</p>
                 <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
                   We default to open-source where it meets the need — reducing vendor lock-in,
-                  lowering long-term costs, and keeping your organisation in control of its own
-                  infrastructure.
+                  lowering long-term costs, and keeping your organisation in control of its own infrastructure.
                 </p>
               </div>
-
-              <div className="mt-8">
-                <Button href="/contact" variant="primary">Work With Us</Button>
-              </div>
-            </MotionReveal>
-          </div>
+              <Button href="/contact" variant="primary" className="shrink-0">Work With Us</Button>
+            </div>
+          </MotionReveal>
         </div>
       </section>
 

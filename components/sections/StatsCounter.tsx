@@ -5,9 +5,9 @@ import { STATS } from "@/lib/constants";
 export default function StatsCounter() {
   return (
     <section
-      className="section-py geo-grid"
+      className="section-py"
       style={{
-        backgroundColor: "rgba(3,169,244,0.025)",
+        backgroundColor: "var(--bg-section-alt)",
         borderTop: "1px solid var(--border)",
         borderBottom: "1px solid var(--border)",
       }}

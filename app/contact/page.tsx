@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const INFO_ITEMS = [
-  { icon: Mail,  label: "Email",         content: "hello@illustretech.rw", href: "mailto:hello@illustretech.rw" },
+  { icon: Mail,  label: "Email",         content: "illustre.tech.house@gmail.com", href: "mailto:illustre.tech.house@gmail.com" },
   { icon: MapPin, label: "Location",     content: "Kigali, Rwanda",        href: null },
   { icon: Clock,  label: "Response Time", content: "Within 24 hours, guaranteed.", href: null },
 ];
@@ -125,7 +125,7 @@ export default function ContactPage() {
                     Prefer a conversation? Book a free 30-minute call with no commitment.
                   </p>
                   <a
-                    href="https://calendly.com/illustretech"
+                    href="https://calendly.com/illustre-tech-house/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-brand text-sm font-medium hover:underline"

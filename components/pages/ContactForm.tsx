@@ -46,7 +46,7 @@ export default function ContactForm() {
     const body    = encodeURIComponent(
       `Name: ${data.name}\nOrganisation: ${data.organisation}\nEmail: ${data.email}\nService: ${data.service}\nBudget: ${data.budget || "Not specified"}\n\nProject Description:\n${data.description}`
     );
-    window.location.href = `mailto:hello@illustretech.rw?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:illustre.tech.house@gmail.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
@@ -62,7 +62,7 @@ export default function ContactForm() {
         </h3>
         <p className="text-sm max-w-xs" style={{ color: "var(--text-muted)" }}>
           Your email client should have opened. If not, email us directly at{" "}
-          <a href="mailto:hello@illustretech.rw" className="text-brand">hello@illustretech.rw</a>
+          <a href="mailto:illustre.tech.house@gmail.com" className="text-brand">illustre.tech.house@gmail.com</a>
         </p>
       </div>
     );

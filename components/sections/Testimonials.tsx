@@ -46,10 +46,9 @@ export default function Testimonials() {
               <div
                 className="flex flex-col h-full rounded-2xl gap-6"
                 style={{
-                  padding: "2rem 2rem",
-                  backgroundColor: "rgba(22,28,40,0.88)",
-                  border: "1px solid rgba(255,255,255,0.07)",
-                  backdropFilter: "blur(10px)",
+                  padding: "2rem",
+                  backgroundColor: "var(--bg-card)",
+                  border: "1px solid var(--border)",
                 }}
               >
                 <Quote size={20} className="text-brand opacity-50 shrink-0" />
@@ -63,7 +62,7 @@ export default function Testimonials() {
 
                 <div
                   className="flex items-center gap-3 pt-4"
-                  style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+                  style={{ borderTop: "1px solid var(--border)" }}
                 >
                   <div
                     className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs shrink-0"

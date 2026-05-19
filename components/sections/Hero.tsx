@@ -28,46 +28,35 @@ export default function Hero() {
         <div
           className="absolute inset-0"
           style={{
-            background:
-              "linear-gradient(135deg, rgba(13,17,23,0.97) 0%, rgba(13,17,23,0.88) 55%, rgba(3,169,244,0.06) 100%)",
+            background: "linear-gradient(180deg, rgba(13,17,23,0.92) 0%, rgba(13,17,23,0.82) 100%)",
           }}
         />
-        <div className="absolute inset-0 geo-grid" style={{ opacity: 0.3 }} />
       </div>
 
-      {/* Ambient blobs */}
-      <div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[44rem] h-[28rem] rounded-full blur-3xl pointer-events-none float-y"
-        style={{ backgroundColor: "rgba(3,169,244,0.055)" }}
-      />
-      <div
-        className="absolute bottom-24 right-16 w-72 h-72 rounded-full blur-3xl pointer-events-none"
-        style={{ backgroundColor: "rgba(0,200,150,0.04)" }}
-      />
 
       {/* ── Main content ── */}
       <div className="relative z-10 flex-1 flex flex-col justify-center">
-        <div className="wrap pt-32 pb-16 sm:pt-36 sm:pb-20">
+        <div className="wrap pt-28 pb-10 sm:pt-32 sm:pb-12">
 
           {/* Location pill */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-8"
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-6"
             style={{
-              border: "1px solid rgba(3,169,244,0.3)",
-              backgroundColor: "rgba(3,169,244,0.07)",
+              border: "1px solid rgba(3,169,244,0.25)",
+              backgroundColor: "rgba(3,169,244,0.06)",
             }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse shrink-0" />
             <span className="text-brand font-mono text-[11px] uppercase tracking-widest">
               Kigali, Rwanda · Est. 2024
             </span>
-          </motion.div>
+          </motion.div> */}
 
           {/* Animated headline */}
-          <h1 className="font-bold leading-[1.06] tracking-tight mb-10 text-[2.6rem] sm:text-[3.4rem] lg:text-[4.5rem] xl:text-[5rem]">
+          <h1 className="font-bold leading-[1.06] tracking-tight mb-7 text-[2.4rem] sm:text-[3.2rem] lg:text-[4.25rem] xl:text-[4.75rem]">
             {/* Line 1 — white */}
             <span className="block mb-1">
               {words1.map((word, i) => (
@@ -107,11 +96,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.82, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base sm:text-lg lg:text-xl max-w-2xl mb-14 leading-relaxed"
+            className="text-base sm:text-lg max-w-2xl mb-10 leading-relaxed"
             style={{ color: "rgba(244,244,245,0.65)" }}
           >
-            We build the systems that help African organisations — NGOs, government offices, and
-            growing businesses — deliver on their mission with precision and scale.
+            We build the systems that help organisations; NGOs, government offices, and
+            growing businesses deliver on their mission with precision and scale.
           </motion.p>
 
           {/* CTAs */}
@@ -119,7 +108,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-start gap-4 mb-20"
+            className="flex flex-col sm:flex-row items-start gap-4 mb-12"
           >
             <Button href="/work" variant="primary" size="lg" className="glow-brand w-full sm:w-auto">
               See Client Results
@@ -137,17 +126,16 @@ export default function Hero() {
             className="flex flex-wrap items-center gap-3"
           >
             {[
-              { value: "40+", label: "Projects delivered" },
+              { value: "8+", label: "Projects delivered" },
               { value: "82%", label: "Avg. time saved" },
-              { value: "12+", label: "Organisations served" },
+              { value: "4+", label: "Organisations served" },
             ].map((stat) => (
               <div
                 key={stat.label}
                 className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full"
                 style={{
-                  border: "1px solid rgba(244,244,245,0.1)",
-                  backgroundColor: "rgba(13,17,23,0.5)",
-                  backdropFilter: "blur(8px)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  backgroundColor: "rgba(13,17,23,0.45)",
                 }}
               >
                 <span className="text-brand font-bold text-sm font-mono">{stat.value}</span>

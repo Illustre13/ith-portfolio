@@ -84,8 +84,7 @@ export default function WhyUs() {
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
                       style={{
-                        backgroundColor: "rgba(3,169,244,0.1)",
-                        border: "1px solid rgba(3,169,244,0.2)",
+                        backgroundColor: "rgba(3,169,244,0.08)",
                       }}
                     >
                       <f.icon size={18} className="text-brand" />

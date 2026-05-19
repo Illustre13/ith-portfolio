@@ -43,7 +43,7 @@ export default function ServiceCard({ id, icon, title, description, subServices,
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(30,36,50,1) 0%, rgba(30,36,50,0.15) 100%)" }} />
             <div
               className="absolute bottom-5 left-6 w-11 h-11 rounded-xl flex items-center justify-center"
-              style={{ backgroundColor: "rgba(3,169,244,0.9)", boxShadow: "0 4px 16px rgba(3,169,244,0.3)" }}
+              style={{ backgroundColor: "#03a9f4" }}
             >
               <Icon size={20} className="text-obsidian" />
             </div>
