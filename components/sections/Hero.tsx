@@ -111,10 +111,10 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-start gap-4 mb-12"
           >
             <Button href="/work" variant="primary" size="lg" className="glow-brand w-full sm:w-auto">
-              See Client Results
+              See what we&apos;ve shipped
             </Button>
             <Button href="/contact" variant="secondary" size="lg" className="w-full sm:w-auto">
-              Start a Conversation
+              Talk to the team
             </Button>
           </motion.div>
 

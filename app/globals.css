@@ -75,28 +75,41 @@
 
 /* ─── CSS custom properties (light/dark) ───────────────────────────────────── */
 :root {
-  /* default = dark */
-  --bg-page:       #0D1117;
-  --bg-section-alt:#13181f;
-  --bg-card:       #1E2432;
-  --border:        #2A2F3F;
-  --text-primary:  #F4F4F5;
-  --text-muted:    #8B8FA8;
-  --scrollbar-bg:  #0D1117;
-  --scrollbar-th:  #2A2F3F;
-  --geo-opacity:   0.06;
+  /* default = dark — three distinct steps */
+  --bg-page:           #0D1117;   /* deepest — base */
+  --bg-section-alt:    #161B22;   /* step 1 up */
+  --bg-raised:         #1E2432;   /* step 2 up — cards, raised sections */
+  --bg-card:           #1E2432;
+  --border:            #2A2F3F;
+  --text-primary:      #F4F4F5;
+  --text-muted:        #8B8FA8;
+  --scrollbar-bg:      #0D1117;
+  --scrollbar-th:      #2A2F3F;
+  --geo-opacity:       0.06;
+  /* Inverted section — light surface on dark theme */
+  --bg-inverted:       #F0F4F8;
+  --text-inv-primary:  #0D1117;
+  --text-inv-muted:    #64748B;
+  --border-inverted:   #CBD5E1;
 }
 
 :root[data-theme="light"] {
-  --bg-page:       #F0F4F8;
-  --bg-section-alt:#FFFFFF;
-  --bg-card:       #FFFFFF;
-  --border:        #CBD5E1;
-  --text-primary:  #0D1117;
-  --text-muted:    #64748B;
-  --scrollbar-bg:  #F0F4F8;
-  --scrollbar-th:  #CBD5E1;
-  --geo-opacity:   0.08;
+  /* light — three distinct steps */
+  --bg-page:           #F0F4F8;   /* mid grey — base */
+  --bg-section-alt:    #FFFFFF;   /* white — step up */
+  --bg-raised:         #E4EAF2;   /* deeper grey — recessed sections */
+  --bg-card:           #FFFFFF;
+  --border:            #CBD5E1;
+  --text-primary:      #0D1117;
+  --text-muted:        #64748B;
+  --scrollbar-bg:      #F0F4F8;
+  --scrollbar-th:      #CBD5E1;
+  --geo-opacity:       0.08;
+  /* Inverted section — dark surface on light theme */
+  --bg-inverted:       #0D1117;
+  --text-inv-primary:  #F4F4F5;
+  --text-inv-muted:    #8B8FA8;
+  --border-inverted:   #2A2F3F;
 }
 
 /* ─── Global layout system ───────────────────────────────────────────────────
@@ -260,6 +273,18 @@ body {
   animation: pulseGlow 1.5s ease-in-out infinite;
 }
 
+/* ─── Timeline step card ────────────────────────────────────────────────────── */
+.timeline-card {
+  border: 1px solid var(--border);
+  background-color: var(--bg-card);
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+.timeline-card:hover {
+  border-color: #03a9f4;
+  background-color: rgba(3, 169, 244, 0.04);
+  transform: translateY(-4px);
+}
+
 /* ─── Reusable hover-lift card helper (no JS needed) ───────────────────────── */
 .hover-card {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
@@ -325,7 +350,7 @@ body {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
-  background-color: var(--bg-section-alt);
+  background-color: var(--bg-raised);
 }
 .trusted-inner {
   max-width: 80rem;
@@ -352,8 +377,8 @@ body {
   z-index: 10;
   pointer-events: none;
 }
-.trusted-fade-left  { left: 0;  background: linear-gradient(to right,  var(--bg-section-alt), transparent); }
-.trusted-fade-right { right: 0; background: linear-gradient(to left, var(--bg-section-alt), transparent); }
+.trusted-fade-left  { left: 0;  background: linear-gradient(to right,  var(--bg-raised), transparent); }
+.trusted-fade-right { right: 0; background: linear-gradient(to left, var(--bg-raised), transparent); }
 .trusted-track {
   padding: 0.5rem 0;
 }
@@ -432,6 +457,29 @@ body {
   padding: 0.1em 0.4em;
   border-radius: 0.25rem;
   color: #03a9f4;
+}
+
+/* ─── Chalk underline accent ────────────────────────────────────────────────── */
+/*
+  Usage: wrap a word in <span className="chalk">{word}</span>
+  Renders the hand-drawn ink brush stroke PNG beneath the word.
+*/
+.chalk {
+  position: relative;
+  display: inline;
+  white-space: nowrap;
+}
+.chalk::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  bottom: -0.4em;
+  height: 0.55em;
+  background-image: url("data:image/svg+xml,%3Csvg width='219' height='26' viewBox='0 0 219 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M218.86 18.2303C218.48 18.6403 210.57 9.60025 210.37 17.2303C207.64 8.32025 197.46 13.2603 190.38 13.3103C185.82 13.3503 181.49 11.6103 176.87 12.2403C176.6 13.6103 177.22 14.6403 178.54 15.0603C180.99 15.8403 185.48 13.9903 186.86 16.2203L152.32 15.1803C116.43 17.5503 79.57 15.3803 43.38 18.2403C41.87 18.3603 39.81 18.8303 38.3 19.2103C36.62 19.6303 35.38 18.2103 35.88 21.2303L70.32 20.1803L79.86 21.2202L21.33 24.2003C10.87 29.8003 4.38 20.2603 0 11.9103C0.64 4.26028 19.53 1.66026 25.37 1.24026C71.56 -2.03974 121.81 2.49027 168.4 0.190274C185.41 3.23027 211.59 -2.13975 218.85 18.2303H218.86Z' fill='%2303A9F4'/%3E%3Cpath d='M130.87 21.2302H96.8699V22.2302H130.87V21.2302Z' fill='%2303A9F4'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 /* ─── Custom cursor — suppress native cursor on pointer devices ─────────────── */

@@ -9,7 +9,7 @@ export default function BlogPreview() {
   const posts = BLOG_POSTS.slice(0, 3);
 
   return (
-    <section className="section-py-lg" style={{ backgroundColor: "var(--bg-section-alt)" }}>
+    <section className="section-py-lg" style={{ backgroundColor: "var(--bg-raised)" }}>
       <div className="wrap">
         <MotionReveal>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 section-head">

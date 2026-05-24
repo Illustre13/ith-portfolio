@@ -17,6 +17,7 @@ interface CaseStudyCardProps {
   result: string;
   stack: string[];
   thumbnail?: string;
+  index?: number;
 }
 
 const SECTOR_COLORS: Record<string, string> = {
@@ -26,8 +27,9 @@ const SECTOR_COLORS: Record<string, string> = {
   Education: "#8b5cf6",
 };
 
-export default function CaseStudyCard({ id, sector, tag, title, client, problem, solution, result, stack, thumbnail }: CaseStudyCardProps) {
+export default function CaseStudyCard({ id, sector, tag, title, client, problem, solution, result, stack, thumbnail, index = 0 }: CaseStudyCardProps) {
   const accent = SECTOR_COLORS[sector] ?? "#03a9f4";
+  const isFeatured = index === 1;
 
   return (
     <MotionReveal direction="scale">
@@ -97,15 +99,35 @@ export default function CaseStudyCard({ id, sector, tag, title, client, problem,
             </div>
           </div>
 
-          <div
-            className="mt-7 p-5 rounded-xl"
-            style={{ backgroundColor: `${accent}0d`, border: `1px solid ${accent}33` }}
-          >
-            <p className="font-mono text-[10px] uppercase tracking-widest mb-1.5" style={{ color: "var(--text-muted)" }}>
-              Key Result
-            </p>
-            <p className="font-bold text-base leading-snug" style={{ color: accent }}>{result}</p>
-          </div>
+          {isFeatured ? (
+            /* Brand featured card — solid brand background, sharp corners */
+            <div
+              className="mt-7 p-5"
+              style={{
+                backgroundColor: "#03a9f4",
+                borderRadius: "0.375rem",
+              }}
+            >
+              <p className="font-mono text-[10px] uppercase tracking-widest mb-1.5" style={{ color: "rgba(13,17,23,0.6)" }}>
+                Key Result
+              </p>
+              <p className="font-bold text-base leading-snug" style={{ color: "#0d1117" }}>{result}</p>
+            </div>
+          ) : (
+            /* Standard card — no gradient, sharp corners, plain border */
+            <div
+              className="mt-7 p-5"
+              style={{
+                border: "1px solid var(--border)",
+                borderRadius: "0.375rem",
+              }}
+            >
+              <p className="font-mono text-[10px] uppercase tracking-widest mb-1.5" style={{ color: "var(--text-muted)" }}>
+                Key Result
+              </p>
+              <p className="font-bold text-base leading-snug" style={{ color: accent }}>{result}</p>
+            </div>
+          )}
 
           <div className="mt-6 flex flex-wrap gap-2">
             {stack.map((tech) => (

@@ -22,15 +22,15 @@ export const BLOG_POSTS: BlogPost[] = [
       "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80",
     content: `## The Problem
 
-Across East Africa, NGOs generate thousands of pages of programme reports every year. Field officers write them. Programme managers read them. Donors demand summaries from them. But almost none of this data is structured — it lives in PDFs, locked away from analysis.
+Across East Africa, NGOs generate thousands of pages of programme reports every year. Field officers write them. Programme managers read them. Donors demand summaries from them. But almost none of this data is structured it lives in PDFs, locked away from analysis.
 
 ## Our Approach
 
 We built a three-stage pipeline using LangChain and OpenAI's API:
 
-1. **Ingestion** — PDF reports are uploaded to a FastAPI endpoint, split into overlapping chunks, and embedded into a vector store.
-2. **Extraction** — A structured extraction chain pulls key metrics (beneficiary counts, activity completion rates, geographic coverage) into a validated Pydantic schema.
-3. **Generation** — A final chain drafts donor narrative sections based on the extracted data, with citations back to the source document.
+1. **Ingestion**: PDF reports are uploaded to a FastAPI endpoint, split into overlapping chunks, and embedded into a vector store.
+2. **Extraction**: A structured extraction chain pulls key metrics (beneficiary counts, activity completion rates, geographic coverage) into a validated Pydantic schema.
+3. **Generation**: A final chain drafts donor narrative sections based on the extracted data, with citations back to the source document.
 
 ## Results
 
@@ -46,7 +46,7 @@ In our pilot with a Kigali-based programme monitoring office, the pipeline reduc
     slug: "paperless-ngx-deployment-guide",
     title: "Deploying Paperless-NGX for a 200-Person Office: What We Learned",
     excerpt:
-      "A complete walkthrough of our Paperless-NGX deployment for a national programme office — from LDAP integration to custom document workflows and staff training.",
+      "A complete walkthrough of our Paperless-NGX deployment for a national programme office from LDAP integration to custom document workflows and staff training.",
     category: "Engineering",
     date: "2025-02-08",
     readTime: 11,
@@ -65,7 +65,7 @@ For organisations moving from physical or shared-drive document management to a 
 
 ## The LDAP Challenge
 
-Paperless-NGX's LDAP support requires careful group-mapping configuration. We found that the \`PAPERLESS_LDAP_GROUPS_FILTER\` variable needed to be explicitly scoped to the OU containing programme staff — a broad filter caused permission escalation issues during testing.
+Paperless-NGX's LDAP support requires careful group-mapping configuration. We found that the \`PAPERLESS_LDAP_GROUPS_FILTER\` variable needed to be explicitly scoped to the OU containing programme staff a broad filter caused permission escalation issues during testing.
 
 ## Training
 
@@ -73,7 +73,7 @@ We ran three half-day training sessions across departments. The key insight: sta
 
 ## Results
 
-98% of the organisation's active documents were digitised within 90 days. The remaining 2% were physical-only legal documents that required notarised copies — out of scope for digital-first migration.`,
+98% of the organisation's active documents were digitised within 90 days. The remaining 2% were physical-only legal documents that required notarised copies, out of scope for digital-first migration.`,
   },
   {
     slug: "cloud-cost-optimisation-east-africa",
@@ -108,13 +108,13 @@ In our audits of new client infrastructure, we consistently find the same patter
 
 ## Realistic Expectations
 
-For a typical SME or NGO workload, we target 40–60% cost reduction in the first 90 days. Sustained savings require ongoing governance — we recommend monthly cost review as part of any DevOps retainer.`,
+For a typical SME or NGO workload, we target 40–60% cost reduction in the first 90 days. Sustained savings require ongoing governance we recommend monthly cost review as part of any DevOps retainer.`,
   },
   {
     slug: "technology-strategy-for-african-institutions",
     title: "Technology Strategy for African Institutions: Beyond the Pilot Trap",
     excerpt:
-      "Why most technology pilots in African institutions fail to scale — and the strategic framework we use to build digital infrastructure that actually sticks.",
+      "Why most technology pilots in African institutions fail to scale and the strategic framework we use to build digital infrastructure that actually sticks.",
     category: "Strategy",
     date: "2024-12-05",
     readTime: 9,
@@ -142,8 +142,8 @@ Before any technology project, we work through four questions:
 
 1. **What decision will this enable?** If the answer is "better data" without a specific decision attached, we push back.
 2. **Who owns this after we leave?** We name the internal owner and build the system around their capability, not ours.
-3. **What's the failure mode?** We explicitly design the graceful degradation path — what happens when the internet goes down, when the champion leaves, when the budget is cut.
-4. **How do we know it's working?** A specific, measurable indicator that the system is delivering value — not uptime, but business impact.
+3. **What's the failure mode?** We explicitly design the graceful degradation path, what happens when the internet goes down, when the champion leaves, when the budget is cut.
+4. **How do we know it's working?** A specific, measurable indicator that the system is delivering value not uptime, but business impact.
 
 Technology that sticks is technology that was designed to stick from the beginning.`,
   },

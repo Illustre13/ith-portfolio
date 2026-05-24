@@ -12,7 +12,7 @@ export const SERVICES = [
     icon: "Code2",
     title: "Custom Software Development",
     shortDesc: "Tailored web applications, internal tools, APIs, and backend systems built to solve real business problems.",
-    description: "We design and build production-grade software — from client-facing web applications to complex internal platforms. Every system is architected for reliability, security, and long-term maintainability.",
+    description: "We design and build production-grade software, from client-facing web applications to complex internal platforms. Every system is architected for reliability, security, and long-term maintainability.",
     subServices: [
       "Web applications & internal tools",
       "REST & GraphQL API development",
@@ -46,7 +46,7 @@ export const SERVICES = [
     icon: "Layers",
     title: "Digital Transformation",
     shortDesc: "IT audits, technology roadmaps, and open-source platform deployment for organisations moving from paper to digital.",
-    description: "We guide institutions through digital transitions — from assessing current processes to deploying, configuring, and training staff on proven open-source platforms.",
+    description: "We guide institutions through digital transitions from assessing current processes to deploying, configuring, and training staff on proven open-source platforms.",
     subServices: [
       "IT audits & technology roadmaps",
       "Process digitisation & automation",
@@ -63,7 +63,7 @@ export const SERVICES = [
     icon: "Server",
     title: "Infrastructure & DevOps",
     shortDesc: "Server configuration, CI/CD pipelines, and cloud architecture designed for reliability, security, and scale.",
-    description: "We set up and manage the technical infrastructure your systems depend on — from VPS hardening to automated deployment pipelines and cloud cost optimisation.",
+    description: "We set up and manage the technical infrastructure your systems depend on from VPS hardening to automated deployment pipelines and cloud cost optimisation.",
     subServices: [
       "VPS & server configuration",
       "CI/CD pipelines & automation",
@@ -80,7 +80,7 @@ export const SERVICES = [
     icon: "BarChart3",
     title: "Data Analytics & Reporting",
     shortDesc: "Impact dashboards, M&E systems, and donor reporting tools that make your data legible and defensible.",
-    description: "We build the reporting infrastructure that keeps organisations accountable to their stakeholders — custom dashboards, automated M&E pipelines, and donor-ready visualisations.",
+    description: "We build the reporting infrastructure that keeps organisations accountable to their stakeholders custom dashboards, automated M&E pipelines, and donor-ready visualisations.",
     subServices: [
       "Impact & M&E dashboards",
       "Donor reporting automation",
@@ -169,7 +169,7 @@ export const CASE_STUDIES = [
 export const TESTIMONIALS = [
   {
     quote:
-      "Illustre didn't just build us a dashboard — they understood what we were actually trying to measure and why. The system they delivered has fundamentally changed how we report to our donors.",
+      "Illustre didn't just build us a dashboard they understood what we were actually trying to measure and why. The system they delivered has fundamentally changed how we report to our donors.",
     author: "Amara Diallo",
     role: "Programme Director",
     company: "Regional Health Initiative",
@@ -209,7 +209,17 @@ export const SKILLS_BADGES = [
   "Full-Stack Engineering",
 ];
 
-export const TEAM = [
+export type TeamMember = {
+  initials: string;
+  name: string;
+  role: string;
+  bio: string;
+  linkedin: string;
+  skills: string[];
+  photo?: string;
+};
+
+export const TEAM: TeamMember[] = [
   {
     initials: "BN",
     name: "Bertin NDAHAYO SINGIZWA",

@@ -28,13 +28,14 @@ export default function WorkStrip() {
                 className="text-3xl sm:text-4xl font-bold"
                 style={{ color: "var(--text-primary)" }}
               >
-                Missions we&apos;ve supported.
+                Missions we&apos;ve{" "}
+                <span className="chalk">supported.</span>
               </h2>
               <p
                 className="mt-2 text-sm sm:text-base max-w-md"
                 style={{ color: "var(--text-muted)" }}
               >
-                Real outcomes for real organisations — documented with their permission.
+                Real outcomes for real organisations, documented with their permission.
               </p>
             </div>
             <Link
@@ -51,6 +52,7 @@ export default function WorkStrip() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featured.map((study, i) => {
             const accent = SECTOR_ACCENT[study.sector] ?? "#03a9f4";
+            const isFeatured = i === 1;
             return (
               <MotionReveal key={study.id} direction="up" delay={i * 0.12}>
                 <Link href={`/work/${study.id}`} className="group block h-full">
@@ -112,24 +114,32 @@ export default function WorkStrip() {
                         </p>
                       </div>
 
-                      {/* Result block — always at bottom */}
-                      <div
-                        className="mt-auto rounded-xl p-4"
-                        style={{
-                          backgroundColor: `${accent}0e`,
-                          border: `1px solid ${accent}35`,
-                        }}
-                      >
-                        <p
-                          className="font-mono text-[9px] uppercase tracking-widest mb-1.5"
-                          style={{ color: "var(--text-muted)" }}
+                      {/* Result block — middle card gets brand treatment */}
+                      {isFeatured ? (
+                        <div
+                          className="mt-auto p-4"
+                          style={{ backgroundColor: "#03a9f4", borderRadius: "0.375rem" }}
                         >
-                          Key result
-                        </p>
-                        <p className="font-bold text-sm leading-snug" style={{ color: accent }}>
-                          {study.result}
-                        </p>
-                      </div>
+                          <p className="font-mono text-[9px] uppercase tracking-widest mb-1.5" style={{ color: "rgba(13,17,23,0.6)" }}>
+                            Key result
+                          </p>
+                          <p className="font-bold text-sm leading-snug" style={{ color: "#0d1117" }}>
+                            {study.result}
+                          </p>
+                        </div>
+                      ) : (
+                        <div
+                          className="mt-auto p-4"
+                          style={{ border: "1px solid var(--border)", borderRadius: "0.375rem" }}
+                        >
+                          <p className="font-mono text-[9px] uppercase tracking-widest mb-1.5" style={{ color: "var(--text-muted)" }}>
+                            Key result
+                          </p>
+                          <p className="font-bold text-sm leading-snug" style={{ color: accent }}>
+                            {study.result}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </article>
                 </Link>

@@ -181,7 +181,7 @@ No `.env` file is required to run the site locally. The following values are har
 | Value | Location | Default |
 |---|---|---|
 | Site URL | `app/layout.tsx` → `metadataBase` | `https://illustretech.rw` |
-| Contact email | `lib/constants.ts`, `components/pages/ContactForm.tsx` | `hello@illustretech.rw` |
+| Contact email | `lib/constants.ts`, `components/pages/ContactForm.tsx` | `info@illustretech.rw` |
 | Calendly link | `app/contact/page.tsx` | `https://calendly.com/illustretech` |
 | LinkedIn URL | `components/layout/Footer.tsx` | placeholder |
 | GitHub URL | `components/layout/Footer.tsx` | placeholder |

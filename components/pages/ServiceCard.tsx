@@ -91,7 +91,7 @@ export default function ServiceCard({ id, icon, title, description, subServices,
               Ideal for
             </p>
             <p className="text-sm mb-5 leading-relaxed" style={{ color: "var(--text-primary)" }}>{idealFor}</p>
-            <Button href="/contact" variant="outline" size="sm" showArrow>Get a quote</Button>
+            <Button href="/contact" variant="outline" size="sm" showArrow>Get a scoped proposal</Button>
           </div>
         </div>
       </motion.article>

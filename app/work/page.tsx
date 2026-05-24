@@ -37,7 +37,7 @@ export default function WorkPage() {
       </section>
 
       {/* Filter + Grid */}
-      <section className="section-py" style={{ backgroundColor: "var(--bg-page)" }}>
+      <section className="section-py" style={{ backgroundColor: "var(--bg-section-alt)" }}>
         <div className="wrap">
           {/* Filter tabs */}
           <MotionReveal>
@@ -62,8 +62,8 @@ export default function WorkPage() {
           {/* Grid */}
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {filtered.map((study) => (
-                <CaseStudyCard key={study.id} {...study} />
+              {filtered.map((study, i) => (
+                <CaseStudyCard key={study.id} {...study} index={i} />
               ))}
             </div>
           ) : (

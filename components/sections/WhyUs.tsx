@@ -1,29 +1,34 @@
 import Image from "next/image";
-import { Globe, Zap, Shield } from "lucide-react";
+import { Check, X } from "lucide-react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import MotionReveal from "@/components/ui/MotionReveal";
 
-const FEATURES = [
+const COMPARISON = [
   {
-    icon: Globe,
-    title: "Built for the African Context",
-    body: "We understand the infrastructure constraints, compliance landscape, and institutional realities of East African organisations. Our solutions are designed for the environment they'll actually run in — not an idealised version of it.",
+    topic: "Team on your project",
+    them: "Junior devs, rotated",
+    us: "Senior engineers only",
   },
   {
-    icon: Zap,
-    title: "Agentic AI & Modern Stack",
-    body: "From open-source deployment to custom LLM pipelines and earth observation ML, we bring frontier technology to practical problems. We don't recommend technology for its own sake — only when it creates a measurable advantage.",
+    topic: "Open-source policy",
+    them: "Licences first",
+    us: "Open-source default",
   },
   {
-    icon: Shield,
-    title: "Boutique Accountability",
-    body: "As a focused firm, every engagement receives direct senior attention. There are no handoffs to juniors, no offshore teams, no disappearing acts. You work with the same engineers throughout — from scoping to delivery.",
+    topic: "Location context",
+    them: "Generic global delivery",
+    us: "Built for EAC constraints",
+  },
+  {
+    topic: "Handoff",
+    them: "PDF documentation",
+    us: "Live training + support",
   },
 ];
 
 export default function WhyUs() {
   return (
-    <section className="section-py-lg" style={{ backgroundColor: "var(--bg-section-alt)" }}>
+    <section className="section-py-lg" style={{ backgroundColor: "var(--bg-raised)" }}>
       <div className="wrap">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -37,7 +42,6 @@ export default function WhyUs() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              {/* Stats strip at bottom of image */}
               <div
                 className="absolute bottom-0 left-0 right-0 p-4"
                 style={{
@@ -60,42 +64,57 @@ export default function WhyUs() {
             </div>
           </MotionReveal>
 
-          {/* Right — text */}
-          <div className="flex flex-col gap-8">
+          {/* Right — comparison table */}
+          <div className="flex flex-col gap-6">
             <MotionReveal>
               <SectionLabel className="mb-4">Our Edge</SectionLabel>
               <h2
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-8"
                 style={{ color: "var(--text-primary)" }}
               >
                 Precision.{" "}
                 <span className="text-brand">Context.</span>{" "}
-                Delivery.
+                <span className="chalk">Delivery.</span>
               </h2>
             </MotionReveal>
 
-            <div className="flex flex-col gap-4">
-              {FEATURES.map((f, i) => (
-                <MotionReveal key={f.title} direction="up" delay={i * 0.1}>
+            {/* Table header */}
+            <MotionReveal delay={0.05}>
+              <div className="grid grid-cols-[1fr_1fr_1fr] gap-3 mb-2 px-1">
+                <span />
+                <span className="text-[10px] font-mono uppercase tracking-widest text-center" style={{ color: "var(--text-muted)" }}>
+                  Most agencies
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-center text-brand">
+                  Illustre
+                </span>
+              </div>
+            </MotionReveal>
+
+            {/* Rows */}
+            <div className="flex flex-col gap-0" style={{ border: "1px solid var(--border)", borderRadius: "0.75rem", overflow: "hidden" }}>
+              {COMPARISON.map((row, i) => (
+                <MotionReveal key={row.topic} direction="up" delay={0.08 + i * 0.07}>
                   <div
-                    className="hover-card flex gap-5 items-start rounded-xl card-theme"
-                    style={{ padding: "1.5rem" }}
+                    className="grid grid-cols-[1fr_1fr_1fr] gap-3 items-center px-4 py-3.5"
+                    style={{
+                      borderBottom: i < COMPARISON.length - 1 ? "1px solid var(--border)" : "none",
+                    }}
                   >
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
-                      style={{
-                        backgroundColor: "rgba(3,169,244,0.08)",
-                      }}
-                    >
-                      <f.icon size={18} className="text-brand" />
+                    <span className="text-xs font-medium" style={{ color: "var(--text-muted)" }}>
+                      {row.topic}
+                    </span>
+                    <div className="flex items-center justify-center gap-1.5">
+                      <X size={12} style={{ color: "rgba(239,68,68,0.6)" }} className="shrink-0" />
+                      <span className="text-xs text-center" style={{ color: "var(--text-muted)", textDecoration: "line-through", textDecorationColor: "rgba(239,68,68,0.4)" }}>
+                        {row.them}
+                      </span>
                     </div>
-                    <div>
-                      <h3 className="font-bold text-sm mb-1.5" style={{ color: "var(--text-primary)" }}>
-                        {f.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                        {f.body}
-                      </p>
+                    <div className="flex items-center justify-center gap-1.5">
+                      <Check size={12} className="text-brand shrink-0" />
+                      <span className="text-xs font-medium text-center" style={{ color: "var(--text-primary)" }}>
+                        {row.us}
+                      </span>
                     </div>
                   </div>
                 </MotionReveal>

@@ -55,7 +55,7 @@ const structuredData = {
   description:
     "Boutique IT consulting firm in Kigali, Rwanda. Custom software development, AI solutions, and digital transformation for African institutions.",
   url: "https://illustretech.rw",
-  email: "illustre.tech.house@gmail.com",
+  email: "info@illustretech.rw",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Kigali",

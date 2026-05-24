@@ -48,7 +48,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="section-py" style={{ backgroundColor: "var(--bg-page)" }}>
+      <section className="section-py" style={{ backgroundColor: "var(--bg-section-alt)" }}>
         <div className="wrap">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <MotionReveal direction="left">
@@ -121,71 +121,63 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="section-py" style={{ backgroundColor: "var(--bg-page)" }}>
+      {/* Team — inverted section */}
+      <section
+        className="section-py"
+        style={{ backgroundColor: "var(--bg-inverted)", borderTop: "1px solid var(--border-inverted)", borderBottom: "1px solid var(--border-inverted)" }}
+      >
         <div className="wrap">
           <MotionReveal>
             <SectionLabel className="mb-4">The Team</SectionLabel>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3" style={{ color: "var(--text-inv-primary)" }}>
               People behind the work.
             </h2>
-            <p className="text-base leading-relaxed mb-12 max-w-xl" style={{ color: "var(--text-muted)" }}>
-              A small, senior team — each member hands-on from kick-off to delivery.
+            <p className="text-base leading-relaxed mb-14 max-w-xl" style={{ color: "var(--text-inv-muted)" }}>
+              A small, senior team each member hands-on from kick-off to delivery.
             </p>
           </MotionReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-12 sm:gap-x-16">
             {TEAM.map((member, i) => (
               <MotionReveal key={member.name} direction="up" delay={i * 0.1}>
-                <HoverCard className="card-body flex flex-col h-full">
-                  {/* Avatar + name */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <div
-                      className="w-16 h-16 rounded-full flex items-center justify-center shrink-0 text-brand font-bold text-xl font-mono"
-                      style={{ backgroundColor: "rgba(3,169,244,0.1)", border: "2px solid rgba(3,169,244,0.25)" }}
-                    >
-                      {member.initials}
-                    </div>
-                    <div>
-                      <p className="font-bold text-base leading-snug" style={{ color: "var(--text-primary)" }}>
-                        {member.name}
-                      </p>
-                      <p className="font-mono text-xs mt-0.5 uppercase tracking-wide" style={{ color: "var(--text-muted)" }}>
-                        {member.role}
-                      </p>
-                    </div>
+                <div className="flex flex-col items-center gap-4 w-44">
+
+                  {/* Circular avatar */}
+                  <div
+                    className="relative w-36 h-36 rounded-full overflow-hidden shrink-0 flex items-center justify-center font-bold text-3xl font-mono text-brand"
+                    style={{
+                      backgroundColor: "rgba(3,169,244,0.12)",
+                      border: "2px solid rgba(3,169,244,0.3)",
+                    }}
+                  >
+                    {member.photo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-top" />
+                    ) : (
+                      member.initials
+                    )}
                   </div>
 
-                  {/* Bio */}
-                  <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "var(--text-muted)" }}>
-                    {member.bio}
-                  </p>
-
-                  {/* Skill badges */}
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {member.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-widest font-medium text-brand"
-                        style={{ backgroundColor: "rgba(3,169,244,0.08)", border: "1px solid rgba(3,169,244,0.18)" }}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* LinkedIn */}
-                  <div style={{ borderTop: "1px solid var(--border)", paddingTop: "1.25rem" }}>
+                  {/* Name + role + LinkedIn */}
+                  <div className="flex flex-col items-center gap-1 text-center">
+                    <p className="font-semibold text-sm leading-snug" style={{ color: "var(--text-inv-primary)" }}>
+                      {member.name}
+                    </p>
+                    <p className="text-xs italic" style={{ color: "#03a9f4" }}>
+                      {member.role}
+                    </p>
                     <a
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:text-brand"
-                      style={{ color: "var(--text-muted)" }}
+                      className="mt-1 inline-flex items-center gap-1 text-[11px] font-mono uppercase tracking-widest transition-colors duration-200 hover:text-brand"
+                      style={{ color: "var(--text-inv-muted)" }}
                     >
-                      <SquareArrowOutUpRight size={14} /></a>
+                      LinkedIn
+                      <SquareArrowOutUpRight size={11} />
+                    </a>
                   </div>
-                </HoverCard>
+                </div>
               </MotionReveal>
             ))}
           </div>
@@ -195,7 +187,7 @@ export default function AboutPage() {
       {/* Tech stack */}
       <section
         className="section-py"
-        style={{ backgroundColor: "var(--bg-section-alt)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}
+        style={{ backgroundColor: "var(--bg-raised)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}
       >
         <div className="wrap">
           <MotionReveal>

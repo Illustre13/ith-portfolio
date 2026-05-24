@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const INFO_ITEMS = [
-  { icon: Mail,  label: "Email",         content: "illustre.tech.house@gmail.com", href: "mailto:illustre.tech.house@gmail.com" },
+  { icon: Mail,  label: "Email",         content: "info@illustretech.rw", href: "mailto:info@illustretech.rw" },
   { icon: MapPin, label: "Location",     content: "Kigali, Rwanda",        href: null },
   { icon: Clock,  label: "Response Time", content: "Within 24 hours, guaranteed.", href: null },
 ];
@@ -51,7 +51,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main content */}
-      <section className="section-py" style={{ backgroundColor: "var(--bg-page)" }}>
+      <section className="section-py" style={{ backgroundColor: "var(--bg-section-alt)" }}>
         <div className="wrap">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
 

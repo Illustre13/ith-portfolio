@@ -31,7 +31,7 @@ export default function BlogPage() {
               From the ITH desk.
             </h1>
             <p className="text-lg max-w-xl leading-relaxed" style={{ color: "var(--text-muted)" }}>
-              Technical writing on AI, engineering, and digital strategy — for builders and decision-makers
+              Technical writing on AI, engineering, and digital strategy for builders and decision-makers
               across East Africa.
             </p>
           </MotionReveal>
@@ -39,7 +39,7 @@ export default function BlogPage() {
       </section>
 
       {/* Posts grid */}
-      <section className="section-py" style={{ backgroundColor: "var(--bg-page)" }}>
+      <section className="section-py" style={{ backgroundColor: "var(--bg-section-alt)" }}>
         <div className="wrap">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {BLOG_POSTS.map((post, i) => (

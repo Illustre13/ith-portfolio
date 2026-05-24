@@ -40,7 +40,8 @@ export default function ServicesGrid() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-2xl mx-auto"
             style={{ color: "var(--text-primary)" }}
           >
-            End-to-end technology consulting for organisations that demand quality.
+            End-to-end technology consulting for organisations that demand{" "}
+            <span className="chalk">quality.</span>
           </h2>
         </MotionReveal>
 

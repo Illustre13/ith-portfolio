@@ -55,7 +55,7 @@ export default function Testimonials() {
 
                 <p
                   className="text-sm leading-loose flex-1 italic"
-                  style={{ color: "rgba(244,244,245,0.8)" }}
+                  style={{ color: "var(--text-muted)" }}
                 >
                   &ldquo;{t.quote}&rdquo;
                 </p>
@@ -71,8 +71,8 @@ export default function Testimonials() {
                     {t.avatar}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold" style={{ color: "#F4F4F5" }}>{t.author}</p>
-                    <p className="text-xs mt-0.5" style={{ color: "rgba(139,143,168,0.7)" }}>
+                    <p className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>{t.author}</p>
+                    <p className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>
                       {t.role} · {t.company}
                     </p>
                   </div>
