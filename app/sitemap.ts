@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getBlogPostSlugs } from "@/lib/blog";
 import { CASE_STUDIES } from "@/lib/constants";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://illustretech.rw";
   const now = new Date();

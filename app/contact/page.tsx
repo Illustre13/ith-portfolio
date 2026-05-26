@@ -40,7 +40,7 @@ export default function ContactPage() {
             >
               Let&apos;s talk about
               <br />
-              <span className="text-brand">your project.</span>
+              <span className="chalk">your project.</span>
             </h1>
             <p className="text-base sm:text-lg max-w-xl leading-relaxed" style={{ color: "var(--text-muted)" }}>
               We&apos;re selectively onboarding new clients. Tell us about your organisation and

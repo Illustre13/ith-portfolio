@@ -113,7 +113,7 @@ export default function Hero() {
             <Button href="/work" variant="primary" size="lg" className="glow-brand w-full sm:w-auto">
               See what we&apos;ve shipped
             </Button>
-            <Button href="/contact" variant="secondary" size="lg" className="w-full sm:w-auto">
+            <Button href="/contact" variant="secondary" size="lg" className="w-full sm:w-auto text-white!">
               Talk to the team
             </Button>
           </motion.div>

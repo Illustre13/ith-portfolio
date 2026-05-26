@@ -24,7 +24,7 @@ export default function CTABand() {
               style={{ color: "var(--text-primary)" }}
             >
               What are you<br />
-              <span className="text-brand">building?</span>
+              <span className="chalk">building?</span>
             </h2>
             <p
               className="text-base leading-relaxed mb-8"

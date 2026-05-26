@@ -57,7 +57,7 @@ export default function Navbar() {
               <div className="leading-none">
                 <span
                   className="font-bold text-[1rem] tracking-wide transition-colors duration-200 group-hover:text-brand"
-                  style={{ color: "var(--text-primary)" }}
+                  style={{ color: "var(--brand-primary)" }}
                 >
                   Illustre<span className="text-brand">.</span>
                 </span>

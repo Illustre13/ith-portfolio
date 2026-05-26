@@ -37,7 +37,7 @@ export default function AboutPage() {
             >
               Built in Kigali.
               <br />
-              <span className="text-brand">Built to last.</span>
+              <span className="chalk">Built to last.</span>
             </h1>
             <p className="text-xl leading-relaxed" style={{ color: "var(--text-muted)" }}>
               Illustre Tech House was founded with one conviction: African institutions deserve

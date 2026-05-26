@@ -82,6 +82,7 @@
   --bg-card:           #1E2432;
   --border:            #2A2F3F;
   --text-primary:      #F4F4F5;
+  --brand-primary:     #F4F4F5;
   --text-muted:        #8B8FA8;
   --scrollbar-bg:      #0D1117;
   --scrollbar-th:      #2A2F3F;
@@ -101,6 +102,7 @@
   --bg-card:           #FFFFFF;
   --border:            #CBD5E1;
   --text-primary:      #0D1117;
+  --brand-primary:     #64748B;
   --text-muted:        #64748B;
   --scrollbar-bg:      #F0F4F8;
   --scrollbar-th:      #CBD5E1;

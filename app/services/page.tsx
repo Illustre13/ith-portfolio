@@ -28,7 +28,7 @@ export default function ServicesPage() {
               style={{ color: "var(--text-primary)" }}
             >
               Technology services built for{" "}
-              <span className="text-brand">real outcomes.</span>
+              <span className="chalk">real outcomes.</span>
             </h1>
             <p
               className="text-base sm:text-lg max-w-2xl leading-relaxed mb-8"
