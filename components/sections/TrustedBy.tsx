@@ -7,6 +7,7 @@ const CLIENTS: { name: string; slug: string; logoFile?: string }[] = [
   { name: "VeloT Africa",           slug: "velot", logoFile: "/logos/velot.jpg" },
   { name: "Twenza Tech",            slug: "twenza", logoFile: "/logos/twenza_favicon.svg" },
   { name: "Kigali Tech Hub",        slug: "kth"},
+  { name: "Stone Forge",            slug: "stone_forge", logoFile: "/logos/stone_forge_005.png" },
 ];
 
 function ClientLogo({ name, logoFile }: { name: string; logoFile?: string }) {
