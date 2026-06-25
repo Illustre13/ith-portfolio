@@ -1,0 +1,15 @@
+##### THIS ALLOWS US TO DEPLOY THE SITE FROM A GIT REPO ######
+
+---
+
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/illustre/public_html/
+    # Install dependencies
+    - /bin/npm install
+    # Build the React app (creates dist folder)
+    - /bin/npm run build
+    # Copy all built files from dist to deployment path
+    - /bin/cp -R dist/* $DEPLOYPATH
+    # Ensure .htaccess is copied if it exists (for React Router)
+    - /bin/cp -f dist/.htaccess $DEPLOYPATH 2>/dev/null || true
