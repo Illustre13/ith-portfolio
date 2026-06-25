@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s | Illustre Tech House",
   },
   description:
-    "Illustre Tech House is a boutique IT consulting firm in Kigali, Rwanda, specialising in custom software development, AI & data solutions, and digital transformation for NGOs, government, and SMEs across East Africa.",
+    "Illustre Tech House is an IT consulting firm, specialising in custom software development, AI & data solutions, and digital transformation for NGOs, government, and SMEs across East Africa.",
   keywords: [
     "IT consulting Rwanda",
     "software development Kigali",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     siteName: "Illustre Tech House",
     title: "Illustre Tech House — Engineering What's Next",
     description:
-      "Boutique IT consulting in Kigali. Custom software, AI solutions, and digital transformation for African institutions.",
+      "IT consulting in Kigali. Custom software, AI solutions, and digital transformation for African institutions.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Illustre Tech House" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Illustre Tech House — Engineering What's Next",
     description:
-      "Boutique IT consulting in Kigali. Custom software, AI solutions, and digital transformation for African institutions.",
+      "IT consulting in Kigali. Custom software, AI solutions, and digital transformation for African institutions.",
   },
   robots: {
     index: true,
@@ -53,7 +53,7 @@ const structuredData = {
   "@type": "LocalBusiness",
   name: "Illustre Tech House",
   description:
-    "Boutique IT consulting firm in Kigali, Rwanda. Custom software development, AI solutions, and digital transformation for African institutions.",
+    "IT consulting firm in Kigali, Rwanda. Custom software development, AI solutions, and digital transformation for African institutions.",
   url: "https://illustretech.rw",
   email: "info@illustretech.rw",
   address: {

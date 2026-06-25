@@ -7,9 +7,9 @@ import MotionReveal from "@/components/ui/MotionReveal";
 import { SERVICES } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Software Development & IT Services in Kigali, Rwanda",
   description:
-    "Custom software development, AI & data solutions, digital transformation, infrastructure, analytics, and training for African institutions.",
+    "Custom software development, AI & data solutions, digital transformation, cloud infrastructure, and training for NGOs, government, and SMEs in Rwanda and East Africa.",
 };
 
 export default function ServicesPage() {

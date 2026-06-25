@@ -6,8 +6,9 @@ import ContactForm from "@/components/pages/ContactForm";
 import MotionReveal from "@/components/ui/MotionReveal";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Start a conversation with Illustre Tech House. We respond to all enquiries within 24 hours.",
+  title: "Contact an IT Consulting Firm in Kigali, Rwanda",
+  description:
+    "Get in touch with Illustre Tech House — software development and IT consulting based in Kigali. We respond to all project enquiries within 24 hours.",
 };
 
 const INFO_ITEMS = [

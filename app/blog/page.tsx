@@ -6,9 +6,9 @@ import CTABand from "@/components/sections/CTABand";
 import { BLOG_POSTS } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "IT & Software Development Blog for East Africa | Illustre Tech House",
   description:
-    "Insights on AI, software engineering, cloud infrastructure, and technology strategy for African institutions — from the Illustre Tech House team.",
+    "Practical guides on AI deployment, open-source ERP, cloud infrastructure, and digital transformation for NGOs, government, and SMEs in Rwanda and East Africa.",
 };
 
 const CATEGORIES = ["All", ...Array.from(new Set(BLOG_POSTS.map((p) => p.category)))];

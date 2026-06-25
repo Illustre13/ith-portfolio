@@ -11,7 +11,7 @@
 
 **Engineering What's Next.**
 
-Production website for [Illustre Tech House](https://illustretech.rw) — a boutique IT consulting firm delivering precision software, AI systems, and digital infrastructure for African institutions.
+Official website for [Illustre Tech House](https://illustretech.rw) — an IT consulting firm delivering precision software, AI systems, and digital infrastructure for African institutions.
 
 [Live Site](https://illustretech.rw) · [Report a Bug](mailto:illustre.tech.house@gmail.com) · [Contact the Firm](https://illustretech.rw/contact)
 
@@ -27,9 +27,9 @@ Production website for [Illustre Tech House](https://illustretech.rw) — a bout
 - [Design System](#design-system)
 - [Getting Started](#getting-started)
 - [Deployment](#deployment)
-- [SEO & Metadata](#seo--metadata)
+- [SEO &amp; Metadata](#seo--metadata)
 - [Content Management](#content-management)
-- [Environment & Configuration](#environment--configuration)
+- [Environment &amp; Configuration](#environment--configuration)
 
 ---
 
@@ -46,28 +46,28 @@ This repository is the complete source for the Illustre Tech House marketing and
 
 ### Pages
 
-| Route | Description |
-|---|---|
-| `/` | Home — hero, services preview, stats, comparison, work strip, testimonials, blog preview, CTA |
-| `/services` | Six-service breakdown with sub-services, tech stack, and 3-step engagement model |
-| `/work` | Filterable case study grid by sector with detail pages |
-| `/blog` | Blog listing with category filter and individual post pages |
-| `/about` | Firm story, mission, values, team profiles, tech stack |
-| `/contact` | Contact form + Calendly discovery call booking |
+| Route         | Description                                                                                    |
+| ------------- | ---------------------------------------------------------------------------------------------- |
+| `/`         | Home — hero, services preview, stats, comparison, work strip, testimonials, blog preview, CTA |
+| `/services` | Six-service breakdown with sub-services, tech stack, and 3-step engagement model               |
+| `/work`     | Filterable case study grid by sector with detail pages                                         |
+| `/blog`     | Blog listing with category filter and individual post pages                                    |
+| `/about`    | Firm story, mission, values, team profiles, tech stack                                         |
+| `/contact`  | Contact form + Calendly discovery call booking                                                 |
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology | Version |
-|---|---|---|
-| Framework | Next.js (App Router) | 16.2.4 |
-| Language | TypeScript | 5.x |
-| Styling | Tailwind CSS | 4.x |
-| Animations | Framer Motion | 12.x |
-| Icons | Lucide React | latest |
-| Runtime | React | 19.2.x |
-| Node.js | Minimum supported | ≥ 18.x |
+| Layer      | Technology           | Version |
+| ---------- | -------------------- | ------- |
+| Framework  | Next.js (App Router) | 16.2.4  |
+| Language   | TypeScript           | 5.x     |
+| Styling    | Tailwind CSS         | 4.x     |
+| Animations | Framer Motion        | 12.x    |
+| Icons      | Lucide React         | latest  |
+| Runtime    | React                | 19.2.x  |
+| Node.js    | Minimum supported    | ≥ 18.x |
 
 ---
 
@@ -145,15 +145,15 @@ ith-portfolio/
 
 ### Brand Colours
 
-| Token | Value | Usage |
-|---|---|---|
-| `--color-brand` | `#03a9f4` | Primary CTAs, active states, links, highlights |
-| `--color-brand-dark` | `#0288d1` | Hover states on brand elements |
-| `--color-brand-light` | `#b3e5fc` | Tints, subtle fills |
-| `--color-kigali` | `#00C896` | Success indicators, positive outcomes |
-| `--color-obsidian` | `#0D1117` | Dark base background |
-| `--color-ivory` | `#F4F4F5` | Body text on dark surfaces |
-| `--color-ash` | `#8B8FA8` | Muted text, labels, secondary info |
+| Token                   | Value       | Usage                                          |
+| ----------------------- | ----------- | ---------------------------------------------- |
+| `--color-brand`       | `#03a9f4` | Primary CTAs, active states, links, highlights |
+| `--color-brand-dark`  | `#0288d1` | Hover states on brand elements                 |
+| `--color-brand-light` | `#b3e5fc` | Tints, subtle fills                            |
+| `--color-kigali`      | `#00C896` | Success indicators, positive outcomes          |
+| `--color-obsidian`    | `#0D1117` | Dark base background                           |
+| `--color-ivory`       | `#F4F4F5` | Body text on dark surfaces                     |
+| `--color-ash`         | `#8B8FA8` | Muted text, labels, secondary info             |
 
 ### Theme System
 
@@ -174,23 +174,23 @@ Dark (default)                    Light
 
 ### Typography
 
-| Role | Family | Weights |
-|---|---|---|
-| Headings & body | Inter | 400, 500, 600, 700, 800 |
-| Monospaced labels & code | JetBrains Mono | 400, 500 |
+| Role                     | Family         | Weights                 |
+| ------------------------ | -------------- | ----------------------- |
+| Headings & body          | Inter          | 400, 500, 600, 700, 800 |
+| Monospaced labels & code | JetBrains Mono | 400, 500                |
 
 ### Utility Classes
 
-| Class | Effect |
-|---|---|
-| `.chalk` | Hand-drawn brush stroke underline accent (SVG `::after`) |
-| `.text-gradient` | Brand linear-gradient clipped to text |
-| `.geo-grid` | CSS geometric grid background pattern |
-| `.glow-brand` | Pulsing brand box-shadow on hover |
-| `.timeline-card` | Hover-lift card with brand border on focus |
-| `.hover-card` | CSS-only lift + shadow on hover |
-| `.section-py` / `.section-py-lg` | Consistent vertical section rhythm |
-| `.wrap` | Max-width container with responsive gutters |
+| Class                                | Effect                                                    |
+| ------------------------------------ | --------------------------------------------------------- |
+| `.chalk`                           | Hand-drawn brush stroke underline accent (SVG`::after`) |
+| `.text-gradient`                   | Brand linear-gradient clipped to text                     |
+| `.geo-grid`                        | CSS geometric grid background pattern                     |
+| `.glow-brand`                      | Pulsing brand box-shadow on hover                         |
+| `.timeline-card`                   | Hover-lift card with brand border on focus                |
+| `.hover-card`                      | CSS-only lift + shadow on hover                           |
+| `.section-py` / `.section-py-lg` | Consistent vertical section rhythm                        |
+| `.wrap`                            | Max-width container with responsive gutters               |
 
 ---
 
@@ -376,27 +376,27 @@ Edit `TEAM` in `lib/constants.ts`:
 
 No `.env` file is required to run locally. Update these values before going to production:
 
-| Value | File | Default |
-|---|---|---|
-| Site URL | `app/layout.tsx` → `metadataBase` | `https://illustretech.rw` |
+| Value         | File                                      | Default                           |
+| ------------- | ----------------------------------------- | --------------------------------- |
+| Site URL      | `app/layout.tsx` → `metadataBase`    | `https://illustretech.rw`       |
 | Contact email | `lib/constants.ts`, `ContactForm.tsx` | `illustre.tech.house@gmail.com` |
-| Calendly link | `app/contact/page.tsx` | set to live Calendly URL |
-| LinkedIn URL | `components/layout/Footer.tsx` | company LinkedIn page |
-| GitHub URL | `components/layout/Footer.tsx` | company GitHub org |
-| OG image | `public/og-image.png` | generate at 1200×630px |
+| Calendly link | `app/contact/page.tsx`                  | set to live Calendly URL          |
+| LinkedIn URL  | `components/layout/Footer.tsx`          | company LinkedIn page             |
+| GitHub URL    | `components/layout/Footer.tsx`          | company GitHub org                |
+| OG image      | `public/og-image.png`                   | generate at 1200×630px           |
 
 ---
 
 ## License
 
-All rights reserved. This codebase is proprietary to **Illustre Tech House**.  
+All rights reserved. This codebase is proprietary to **Illustre Tech House**.
 No part of this repository may be reproduced, distributed, or used without explicit written permission from the firm.
 
 ---
 
 <div align="center">
 
-**Illustre Tech House** · Kigali, Rwanda  
+**Illustre Tech House** · Kigali, Rwanda
 [illustretech.rw](https://illustretech.rw) · [info@illustretech.rw](mailto:info@illustretech.rw)
 
 *Precision engineering for institutions that demand quality.*

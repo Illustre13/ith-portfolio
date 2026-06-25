@@ -8,9 +8,9 @@ import { TEAM, TECH_STACK_LOGOS } from "@/lib/constants";
 import { Target, Heart, Gem, Wrench, SquareArrowOutUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Illustre Tech House — IT Consulting Firm in Kigali, Rwanda",
   description:
-    "Illustre Tech House — a boutique IT consulting firm founded in Kigali with the conviction that African institutions deserve world-class software.",
+    "Illustre Tech House is an IT consulting firm based in Kigali, Rwanda. We build custom software, AI systems, and digital infrastructure for African institutions.",
 };
 
 const VALUES = [
